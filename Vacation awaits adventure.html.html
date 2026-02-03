@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Awaits Adventure - Tanzania Safari & Trekking Tours</title>
+    <meta name="description" content="Safari, Kilimanjaro trekking, Zanzibar beach holidays and adventure tours in Tanzania">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        :root {
+            --primary: #b30000;
+            --secondary: #27ae60;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --accent: #d35400;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --safari-orange: #e67e22;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 70px 8%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: #990000;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: #000;
+        }
+        
+        .btn-whatsapp {
+            background: #25d366;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128c7e;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 2px;
+        }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            bottom: 70px;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Header & Navigation - Combined Style */
+        header {
+            background-color: #000;
+            color: white;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 8%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .slogan {
+            font-size: 0.8rem;
+            color: #ffcc00;
+            font-style: italic;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 40px;
+            margin-left: 8%;
+            max-width: 520px;
+            border-radius: 8px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+        
+        .hero-slogan {
+            color: #ffcc00;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            border-left: 3px solid var(--primary);
+            padding-left: 15px;
+        }
+        
+        /* Grid Layout for Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        /* Card Styles */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card div {
+            padding: 18px;
+        }
+        
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Group Departures Section */
+        .group-departures {
+            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .group-departures .section-title h2 {
+            color: white;
+        }
+        
+        .group-departures .section-title p {
+            color: #ddd;
+        }
+        
+        .departure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .departure-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .departure-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .departure-header {
+            background: rgba(179, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .departure-header h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .departure-content {
+            padding: 25px;
+        }
+        
+        .departure-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .departure-info-item {
+            text-align: center;
+        }
+        
+        .departure-info-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .departure-price {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin: 20px 0;
+        }
+        
+        .departure-price span {
+            font-size: 1rem;
+            color: #ccc;
+            font-weight: normal;
+        }
+        
+        .availability {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .availability.closed {
+            background: #999;
+        }
+        
+        .date-notice {
+            font-size: 0.9rem;
+            color: #ffcc00;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        /* Alternate Section Background */
+        .alt-bg {
+            background: var(--light);
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: var(--dark);
+            color: white;
+        }
+        
+        .why-choose-us .section-title h2 {
+            color: white;
+        }
+        
+        .why-choose-us .section-title p {
+            color: #ddd;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Parks Section */
+        .parks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .park-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .park-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .park-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .park-content {
+            padding: 25px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background: var(--dark);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 40px 8%;
+        }
+        
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3, .footer-col h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 10px;
+        }
+        
+        .company-slogan {
+            color: #ffcc00;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 60px 5%;
+            }
+            
+            .topbar {
+                padding: 12px 5%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                background: #000;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav a {
+                margin: 10px 0;
+                font-size: 1.2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-content {
+                margin-left: 5%;
+                margin-right: 5%;
+                padding: 30px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .slogan {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 25px;
+            }
+            
+            section {
+                padding: 50px 5%;
+            }
+            
+            .topbar {
+                padding: 10px 5%;
+            }
+            
+            .departure-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .slogan {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20your%20Tanzania%20tours." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="topbar">
+            <a href="#" class="logo">
+                <i class="fas fa-compass"></i>
+                <div class="logo-text">
+                    <h1>Vacation Awaits Adventure</h1>
+                    <div class="slogan">Where Dreams Meet Adventure</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <a href="#home">Home</a>
+                <a href="#departures">Group Departures</a>
+                <a href="#safaris">Safari</a>
+                <a href="#trekking">Trekking</a>
+                <a href="#zanzibar">Zanzibar</a>
+                <a href="#parks">National Parks</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Experience Tanzania Like Never Before</h1>
+            <div class="hero-slogan">Where Dreams Meet Adventure</div>
+            <p>Mount Kilimanjaro trekking, luxury safaris & Zanzibar beach holidays with Vacation Awaits Adventure. We operate in all national parks and conservation areas across Tanzania.</p>
+            <a class="btn" href="#departures">View Group Departures</a>
+        </div>
+    </section>
+
+    <!-- Group Departures Section -->
+    <section class="group-departures" id="departures">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tanzania Group Departure Packages</h2>
+                <p>Kilimanjaro & Safari Group Departures - Join our scheduled group tours for an unforgettable adventure with fellow travelers</p>
+            </div>
+            
+            <div class="intro-text" style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.2rem; color: #eee; line-height: 1.8;">
+                    "Climbing Mount Kilimanjaro" – the highest peak of Africa is on the bucket list of most adventure enthusiasts. Climbing Kilimanjaro gives a truly unique wilderness experience as you ascend to the peak of the world's highest free-standing mountain.
+                </p>
+                <p class="date-notice" style="margin-top: 20px;">
+                    <i class="fas fa-sync-alt"></i> <strong>Automatic Monthly Updates:</strong> Our group departure dates automatically update monthly. All dates shown are for the current and upcoming months.
+                </p>
+            </div>
+            
+            <div class="departure-grid">
+                <!-- Kilimanjaro Group Departures -->
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Climbing Kilimanjaro</h3>
+                        <p>7 Days | Machame Route</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="trek-date" data-duration="7" data-route="machame"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="7" data-route="machame"></span></div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $1,969 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%207-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Climbing Kilimanjaro</h3>
+                        <p>8 Days | Lemosho Route</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="trek-date" data-duration="8" data-route="lemosho"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="8" data-route="lemosho"></span></div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $2,251 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%208-Day%20Lemosho%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Safari Group Departures -->
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Big 5 Tanzania Safari</h3>
+                        <p>7 Days | 6 Nights</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="safari-date" data-duration="7"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Multiple dates available monthly</div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $2,651 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%207-Day%20Big%205%20Tanzania%20Safari%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>11 Days Cultural Safari</h3>
+                        <p>11 Days | 10 Nights</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="safari-date" data-duration="11"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Multiple dates available monthly</div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $2,530 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%2011-Day%20Cultural%20Safari%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Additional Kilimanjaro Departures -->
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Kilimanjaro Machame Route</h3>
+                        <p>7 Days | Machame Route</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="trek-date" data-duration="7" data-route="machame2"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="7" data-route="machame2"></span></div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $1,969 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20second%207-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Kilimanjaro Machame Route</h3>
+                        <p>6 Days | Machame Route</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="trek-date" data-duration="6" data-route="machame6"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="6" data-route="machame6"></span></div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $1,687 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%206-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Kilimanjaro Lemosho Route</h3>
+                        <p>8 Days | Lemosho Route</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="trek-date" data-duration="8" data-route="lemosho2"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="8" data-route="lemosho2"></span></div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $2,251 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20second%208-Day%20Lemosho%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="departure-card">
+                    <div class="departure-header">
+                        <h3>Kilimanjaro Marangu Route</h3>
+                        <p>6 Days | Marangu Route</p>
+                    </div>
+                    <div class="departure-content">
+                        <div class="departure-info">
+                            <div class="departure-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>Trek: <span class="trek-date" data-duration="6" data-route="marangu"></span></div>
+                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="6" data-route="marangu"></span></div>
+                            </div>
+                        </div>
+                        <div class="departure-price">
+                            $1,556 <span>Per Person</span>
+                        </div>
+                        <div class="availability">Open</div>
+                        <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%206-Day%20Marangu%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="color: white; margin-bottom: 20px;">Safari And Climbing Mount Kilimanjaro</h3>
+                <p class="date-notice" style="margin-bottom: 20px;">
+                    <i class="fas fa-info-circle"></i> <strong>Note:</strong> All group departure dates automatically update at the beginning of each month. Book early to secure your spot!
+                </p>
+                <a href="#contact" class="btn btn-secondary" style="margin: 10px;">Customize Your Tour</a>
+                <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I%20have%20questions%20about%20your%20group%20departures%20and%20would%20like%20more%20information." class="btn btn-whatsapp" target="_blank" style="margin: 10px;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Inquiry
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Safaris Section -->
+    <section id="safaris">
+        <div class="section-title">
+            <h2>Popular Safaris</h2>
+            <p>Explore Tanzania's most incredible wildlife destinations with our expert-guided safari tours.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1626483644770-60a8b8e7bff3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safari">
+                <div>
+                    <h3>Serengeti Migration Safari</h3>
+                    <p>Witness the great wildebeest migration in the world-famous Serengeti plains.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20the%20Serengeti%20Migration%20Safari." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1598894597310-b524fea0368e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safari">
+                <div>
+                    <h3>Ngorongoro Crater Tour</h3>
+                    <p>Amazing wildlife in the world's largest intact volcanic caldera.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20the%20Ngorongoro%20Crater%20Tour." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1578662990686-2fcd7d6d6e7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safari">
+                <div>
+                    <h3>Lake Manyara Safari</h3>
+                    <p>Tree-climbing lions & flocks of pink flamingos in this scenic park.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20the%20Lake%20Manyara%20Safari." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kilimanjaro Routes Section -->
+    <section class="alt-bg" id="trekking">
+        <div class="section-title">
+            <h2>Kilimanjaro Routes</h2>
+            <p>Choose the perfect path to conquer Africa's highest peak with our experienced guides.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machame Route">
+                <div>
+                    <h3>Machame Route</h3>
+                    <p>Most scenic and popular route with beautiful landscapes and good acclimatization.</p>
+                    <a class="btn" href="#departures">View Group Departures</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1526393004023-b6df52a5d0de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lemosho Route">
+                <div>
+                    <h3>Lemosho Route</h3>
+                    <p>Best success rate with gradual ascent through remote and beautiful wilderness.</p>
+                    <a class="btn" href="#departures">View Group Departures</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1593693399742-6d4d5c6c40d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marangu Route">
+                <div>
+                    <h3>Marangu Route</h3>
+                    <p>Known as the "Coca-Cola" route with hut accommodation all the way.</p>
+                    <a class="btn" href="#departures">View Group Departures</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zanzibar Section -->
+    <section id="zanzibar">
+        <div class="section-title">
+            <h2>Zanzibar Beach Holidays</h2>
+            <p>Relax on pristine white sand beaches after your Tanzanian adventure.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zanzibar Beach">
+                <div>
+                    <h3>Zanzibar Beach Extension</h3>
+                    <p>Add 3-7 days of relaxation on Zanzibar's beautiful beaches after your safari or climb.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Zanzibar%20beach%20holidays." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stone Town">
+                <div>
+                    <h3>Stone Town Cultural Tour</h3>
+                    <p>Explore the historic Stone Town, a UNESCO World Heritage Site.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Stone%20Town%20cultural%20tours." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1573843989-c9d9a2c4c1e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spice Tour">
+                <div>
+                    <h3>Zanzibar Spice Tour</h3>
+                    <p>Discover why Zanzibar is called the "Spice Island" with a guided tour of spice plantations.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Zanzibar%20spice%20tours." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- National Parks Section -->
+    <section id="parks">
+        <div class="section-title">
+            <h2>Tanzania's National Parks</h2>
+            <p>We operate in all of Tanzania's incredible national parks and conservation areas.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mount Kilimanjaro">
+                <div>
+                    <h3>Kilimanjaro National Park</h3>
+                    <p>Home to Africa's highest peak and unique montane ecosystems.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Kilimanjaro%20National%20Park%20tours." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1536152471326-642d7bb4d0ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tarangire National Park">
+                <div>
+                    <h3>Tarangire National Park</h3>
+                    <p>Famous for its large elephant herds and ancient baobab trees.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Tarangire%20National%20Park%20safaris." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ruaha National Park">
+                <div>
+                    <h3>Ruaha National Park</h3>
+                    <p>Tanzania's largest national park with rugged wilderness and abundant wildlife.</p>
+                    <a class="btn" href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Ruaha%20National%20Park%20safaris." target="_blank">Inquire on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Vacation Awaits Adventure</h2>
+                <p>We are committed to providing unforgettable Tanzanian experiences with safety, expertise, and local knowledge.</p>
+            </div>
+            
+            <div class="grid">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Local Experts</h3>
+                    <p>Professional Tanzanian guides with extensive knowledge of wildlife, culture, and terrain.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safe & Trusted</h3>
+                    <p>Licensed & insured operator with excellent safety record and emergency protocols.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Custom Tours</h3>
+                    <p>Tailor‑made itineraries designed to match your interests, budget, and time frame.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team in Arusha to start planning your Tanzanian adventure today.</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Company Information</h3>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Main Office Address</h4>
+                        <p>Mbauda, Arusha, Tanzania<br>P.O.BOX 11687</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-hashtag"></i>
+                    <div>
+                        <h4>TIN Number</h4>
+                        <p>110-191-529</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <div>
+                        <h4>Operating Areas</h4>
+                        <p>All National Parks and Conservation Areas in Tanzania</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Phone & WhatsApp</h4>
+                        <p>+255 789 123 456</p>
+                        <small style="color: #ccc;">Click the WhatsApp button to chat instantly</small>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>info@vacationawaits.co.tz</p>
+                    </div>
+                </div>
+                
+                <div class="company-slogan" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-quote-left" style="color: #ffcc00; margin-right: 5px;"></i>
+                    <strong>Where Dreams Meet Adventure</strong>
+                    <i class="fas fa-quote-right" style="color: #ffcc00; margin-left: 5px;"></i>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tour">Tour of Interest</label>
+                        <select id="tour" class="form-control">
+                            <option value="">Select a Tour</option>
+                            <option value="group-departure">Group Departure Package</option>
+                            <option value="safari">Safari Tours</option>
+                            <option value="kilimanjaro">Kilimanjaro Trekking</option>
+                            <option value="zanzibar">Zanzibar Beach Holiday</option>
+                            <option value="custom">Custom Tour</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your dream Tanzanian adventure..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                    <a href="https://wa.me/255789123456?text=Hello%20Vacation%20Awaits%20Adventure!%20I%20have%20a%20question%20about%20your%20tours." class="btn btn-whatsapp" target="_blank" style="margin-left: 10px;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Vacation Awaits Adventure</h3>
+                <p>Tanzania safari, trekking & beach holidays. Operating in all national parks and conservation areas across Tanzania.</p>
+                <div class="company-slogan">Where Dreams Meet Adventure</div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/255789123456" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#departures">Group Departures</a></p>
+                <p><a href="#safaris">Safari Tours</a></p>
+                <p><a href="#trekking">Kilimanjaro Trekking</a></p>
+                <p><a href="#zanzibar">Zanzibar Holidays</a></p>
+                <p><a href="#parks">National Parks</a></p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt" style="color:var(--primary); margin-right:10px;"></i> Mbauda, Arusha, Tanzania</p>
+                <p><i class="fas fa-envelope" style="color:var(--primary); margin-right:10px;"></i> info@vacationawaits.co.tz</p>
+                <p><i class="fas fa-phone-alt" style="color:var(--primary); margin-right:10px;"></i> +255 789 123 456</p>
+                <p><i class="fas fa-hashtag" style="color:var(--primary); margin-right:10px;"></i> TIN: 110-191-529</p>
+                <p><i class="fas fa-box" style="color:var(--primary); margin-right:10px;"></i> P.O.BOX 11687</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023-<span id="currentYear"></span> Vacation Awaits Adventure. All rights reserved. | Mbauda, Arusha, Tanzania | TIN: 110-191-529 | Last updated: <span id="lastUpdated"></span></p>
+            <p style="margin-top: 10px; color: #ffcc00;"><i>Where Dreams Meet Adventure</i></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const tour = document.getElementById('tour').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            alert(`Thank you ${name}! Your inquiry has been received. We will contact you at ${email} shortly to discuss ${tour ? 'the ' + document.getElementById('tour').options[document.getElementById('tour').selectedIndex].text : 'your custom tour'}.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // WhatsApp button click tracking
+        document.querySelector('.whatsapp-float').addEventListener('click', function() {
+            console.log('WhatsApp button clicked');
+        });
+        
+        // Dynamic Date Calculation for Group Departures
+        function calculateGroupDates() {
+            const today = new Date();
+            const currentMonth = today.getMonth();
+            const currentYear = today.getFullYear();
+            
+            // Define base dates for each route (10th, 16th, 6th, 17th, 11th, 26th of each month)
+            const routeDates = {
+                'machame': 10,     // First Machame route (10th of month)
+                'lemosho': 16,     // First Lemosho route (16th of month)
+                'machame2': 6,     // Second Machame route (6th of month)
+                'machame6': 17,    // 6-day Machame route (17th of month)
+                'lemosho2': 11,    // Second Lemosho route (11th of month)
+                'marangu': 26      // Marangu route (26th of month)
+            };
+            
+            // Calculate dates for each route
+            Object.keys(routeDates).forEach(route => {
+                const dayOfMonth = routeDates[route];
+                
+                // Create trek start date
+                let trekMonth = currentMonth;
+                let trekYear = currentYear;
+                
+                // If the date has already passed this month, schedule for next month
+                if (today.getDate() > dayOfMonth) {
+                    trekMonth = currentMonth + 1;
+                    if (trekMonth > 11) {
+                        trekMonth = 0;
+                        trekYear = currentYear + 1;
+                    }
+                }
+                
+                const trekStartDate = new Date(trekYear, trekMonth, dayOfMonth);
+                const trekEndDate = new Date(trekStartDate);
+                
+                // Get duration from data attribute
+                const durationElements = document.querySelectorAll(`.trek-date[data-route="${route}"]`);
+                if (durationElements.length > 0) {
+                    const duration = parseInt(durationElements[0].getAttribute('data-duration'));
+                    
+                    // Calculate end date (duration - 1 days later)
+                    trekEndDate.setDate(trekStartDate.getDate() + (duration - 1));
+                    
+                    // Calculate arrival date (day before trek starts)
+                    const arrivalDate = new Date(trekStartDate);
+                    arrivalDate.setDate(arrivalDate.getDate() - 1);
+                    
+                    // Format dates
+                    const formatDate = (date) => {
+                        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+                    };
+                    
+                    const formatDateRange = (start, end) => {
+                        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                        
+                        if (start.getMonth() === end.getMonth()) {
+                            return `${monthNames[start.getMonth()]} ${start.getDate()} - ${end.getDate()}, ${start.getFullYear()}`;
+                        } else {
+                            return `${monthNames[start.getMonth()]} ${start.getDate()} - ${monthNames[end.getMonth()]} ${end.getDate()}, ${start.getFullYear()}`;
+                        }
+                    };
+                    
+                    // Update all elements for this route
+                    document.querySelectorAll(`.trek-date[data-route="${route}"]`).forEach(el => {
+                        el.textContent = formatDateRange(trekStartDate, trekEndDate);
+                    });
+                    
+                    document.querySelectorAll(`.arrival-date[data-route="${route}"]`).forEach(el => {
+                        el.textContent = formatDate(arrivalDate);
+                    });
+                    
+                    // Update WhatsApp links with correct dates
+                    document.querySelectorAll(`a[href*="${route}"]`).forEach(link => {
+                        const currentHref = link.getAttribute('href');
+                        if (currentHref.includes('wa.me')) {
+                            const newText = `Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20${duration}-Day%20${route.charAt(0).toUpperCase() + route.slice(1)}%20Route%20Kilimanjaro%20group%20departure%20starting%20${formatDate(trekStartDate)}.`;
+                            link.setAttribute('href', `https://wa.me/255789123456?text=${newText}`);
+                        }
+                    });
+                }
+            });
+            
+            // Calculate safari dates (monthly on 15th)
+            document.querySelectorAll('.safari-date').forEach(el => {
+                const duration = parseInt(el.getAttribute('data-duration'));
+                let safariMonth = currentMonth;
+                let safariYear = currentYear;
+                const safariDay = 15; // Safaris start on 15th of each month
+                
+                // If the date has already passed this month, schedule for next month
+                if (today.getDate() > safariDay) {
+                    safariMonth = currentMonth + 1;
+                    if (safariMonth > 11) {
+                        safariMonth = 0;
+                        safariYear = currentYear + 1;
+                    }
+                }
+                
+                const safariStartDate = new Date(safariYear, safariMonth, safariDay);
+                const safariEndDate = new Date(safariStartDate);
+                safariEndDate.setDate(safariStartDate.getDate() + (duration - 1));
+                
+                const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                
+                if (safariStartDate.getMonth() === safariEndDate.getMonth()) {
+                    el.textContent = `${monthNames[safariStartDate.getMonth()]} ${safariStartDate.getDate()} - ${safariEndDate.getDate()}, ${safariStartDate.getFullYear()}`;
+                } else {
+                    el.textContent = `${monthNames[safariStartDate.getMonth()]} ${safariStartDate.getDate()} - ${monthNames[safariEndDate.getMonth()]} ${safariEndDate.getDate()}, ${safariStartDate.getFullYear()}`;
+                }
+            });
+            
+            // Update copyright year
+            document.getElementById('currentYear').textContent = currentYear;
+            
+            // Update last updated date
+            const lastUpdated = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('lastUpdated').textContent = lastUpdated;
+        }
+        
+        // Initialize date calculations when page loads
+        document.addEventListener('DOMContentLoaded', calculateGroupDates);
+        
+        // Update dates at midnight each day (in case month changes)
+        function updateDatesAtMidnight() {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            const timeUntilMidnight = tomorrow - now;
+            
+            setTimeout(() => {
+                calculateGroupDates();
+                // Schedule next update for the next midnight
+                updateDatesAtMidnight();
+            }, timeUntilMidnight);
+        }
+        
+        // Start the midnight update cycle
+        updateDatesAtMidnight();
+        
+        // Also update dates if user leaves page open for a long time
+        setInterval(calculateGroupDates, 3600000); // Check every hour
+    </script>
+</body>
+</html>
