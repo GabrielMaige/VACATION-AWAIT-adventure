@@ -3,1575 +3,1218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacation Awaits Adventure - Tanzania Safari & Trekking Tours</title>
-    <meta name="description" content="Safari, Kilimanjaro trekking, Zanzibar beach holidays and adventure tours in Tanzania">
+    <title>Vacation Awaits Adventure – Tanzania Safari & Trekking</title>
+    <meta name="description" content="Safari, Kilimanjaro trekking, Zanzibar beach holidays and adventure tours in Tanzania. Join our group departures or customise your journey.">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
+        /* ----- MODERN RESET & TOKENS ----- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
         }
-        
-        :root {
-            --primary: #b30000;
-            --secondary: #27ae60;
-            --dark: #1a1a1a;
-            --light: #f5f5f5;
-            --accent: #d35400;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --safari-orange: #e67e22;
-        }
-        
         body {
-            background-color: #fff;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1e2f4e;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
+        :root {
+            --primary: #b22222;
+            --primary-dark: #8b1a1a;
+            --secondary: #1f7042;
+            --accent-amber: #c27e3b;
+            --ink: #0b2a38;
+            --sand-light: #fcf8f3;
+            --sand: #f7efe6;
+            --gray-mid: #5e6f7d;
+            --gray-light: #eef2f5;
+            --shadow-sm: 0 8px 20px rgba(0, 20, 30, 0.06);
+            --shadow-md: 0 16px 32px rgba(0, 20, 30, 0.10);
+            --shadow-lg: 0 24px 48px rgba(0, 20, 30, 0.12);
+            --whatsapp: #25d366;
+            --whatsapp-dark: #128c7e;
+            --border-radius-card: 24px;
+            --border-radius-btn: 40px;
+            
+            /* Season colors – exactly as requested */
+            --dry: #e67e22;      /* Dry: Jan, Feb, Jul, Aug, Sep, Oct */
+            --shoulder: #f1c40f; /* Shoulder: Mar, Jun, Dec */
+            --rainy: #3498db;    /* Rainy: Apr, May, Nov */
+        }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 15px;
         }
-        
         section {
-            padding: 70px 8%;
+            padding: 80px 6%;
         }
-        
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 56px;
         }
-        
         .section-title h2 {
-            color: var(--dark);
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b2a38;
+            margin-bottom: 16px;
             position: relative;
             display: inline-block;
         }
-        
         .section-title h2:after {
             content: '';
             position: absolute;
-            width: 70px;
+            width: 80px;
             height: 4px;
             background: var(--primary);
-            bottom: -10px;
+            bottom: -14px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 4px;
         }
-        
         .section-title p {
-            color: #666;
-            max-width: 700px;
+            font-size: 1.2rem;
+            color: var(--gray-mid);
+            max-width: 720px;
             margin: 0 auto;
-            font-size: 1.1rem;
         }
-        
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 12px 28px;
-            border-radius: 4px;
+            padding: 12px 32px;
+            border-radius: var(--border-radius-btn);
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 0.98rem;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            box-shadow: 0 8px 16px rgba(178, 34, 34, 0.18);
+            letter-spacing: 0.3px;
         }
-        
         .btn:hover {
-            background: #990000;
+            background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: var(--shadow);
+            box-shadow: 0 14px 24px rgba(178, 34, 34, 0.28);
         }
-        
         .btn-secondary {
-            background: var(--dark);
+            background: #2c3e4e;
+            box-shadow: none;
         }
-        
         .btn-secondary:hover {
-            background: #000;
+            background: #1c2c38;
         }
-        
         .btn-whatsapp {
-            background: #25d366;
+            background: var(--whatsapp);
+            box-shadow: 0 8px 16px rgba(37, 211, 102, 0.2);
         }
-        
         .btn-whatsapp:hover {
-            background: #128c7e;
+            background: var(--whatsapp-dark);
         }
-        
-        /* WhatsApp Floating Button */
+        /* ------ FLOATING SOCIAL (left) – NO BOXES, JUST ICONS ------ */
+        .floating-social {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 1000;
+        }
+        .floating-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s ease, opacity 0.2s;
+            width: auto;
+            height: auto;
+            background: transparent !important;  /* no boxes, pure icon */
+            text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .floating-social a:hover {
+            transform: scale(1.25);
+            opacity: 0.9;
+        }
+        /* icon brand colors – only applied to text, no background */
+        .floating-social .fa-facebook-f { color: #1877f2; }
+        .floating-social .fa-instagram { color: #e4405f; }
+        .floating-social .fa-whatsapp { color: #25d366; }
+        .floating-social .fa-youtube { color: #ff0000; }
+
+        /* ------ RIGHT WHATSAPP FLOAT – refined, minimal ------ */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            color: #fff;
+            width: 64px;
+            height: 64px;
+            background: var(--whatsapp);
+            color: white;
             border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            font-size: 34px;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+            z-index: 1001;
+            transition: 0.2s;
+            text-decoration: none;
+            animation: subtle-pulse 2.2s infinite;
         }
-        
         .whatsapp-float:hover {
-            background-color: #128c7e;
+            background: var(--whatsapp-dark);
             transform: scale(1.1);
-            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
         }
-        
-        .whatsapp-float i {
-            margin-top: 2px;
-        }
-        
         .whatsapp-tooltip {
             position: absolute;
-            background: var(--dark);
+            background: #0a1c2a;
             color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
+            padding: 8px 20px;
+            border-radius: 40px;
             font-size: 14px;
             white-space: nowrap;
-            bottom: 70px;
+            bottom: 80px;
             right: 0;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: 0.2s;
+            font-weight: 500;
+            pointer-events: none;
         }
-        
         .whatsapp-float:hover .whatsapp-tooltip {
             opacity: 1;
             visibility: visible;
         }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+        @keyframes subtle-pulse {
+            0% { box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
+            70% { box-shadow: 0 8px 32px rgba(37,211,102,0.7); }
+            100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
         }
-        
-        /* Header & Navigation - Combined Style */
+
+        /* ------ HEADER / STICKY NAV (clean) ------ */
         header {
-            background-color: #000;
+            background: #0a1c2a;
             color: white;
             position: sticky;
             top: 0;
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 8%;
+            padding: 12px 6%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
         .logo {
             display: flex;
             align-items: center;
-            color: white;
             text-decoration: none;
+            color: white;
         }
-        
         .logo i {
             color: var(--primary);
-            font-size: 2.2rem;
-            margin-right: 10px;
+            font-size: 2.4rem;
+            margin-right: 12px;
         }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
+        .logo-text { display: flex; flex-direction: column; }
         .logo h1 {
             font-size: 1.8rem;
-            font-weight: 700;
-            line-height: 1.2;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
         }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
+        .logo span { color: var(--primary); }
         .slogan {
-            font-size: 0.8rem;
-            color: #ffcc00;
-            font-style: italic;
+            font-size: 0.78rem;
+            color: #fdd835;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-top: 2px;
-            letter-spacing: 0.5px;
         }
-        
-        nav {
-            display: flex;
-        }
-        
+        nav { display: flex; align-items: center; }
         nav a {
-            color: #fff;
+            color: #f0f0f0;
             text-decoration: none;
             margin: 0 12px;
             font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
         }
-        
         nav a:hover {
-            color: var(--primary);
+            color: white;
+            border-bottom-color: var(--primary);
         }
-        
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.9rem;
             cursor: pointer;
         }
-        
-        /* Hero Section */
+
+        /* ------ HERO (cinematic) ------ */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
+            position: relative;
+            min-height: 86vh;
             display: flex;
             align-items: center;
+            overflow: hidden;
+            background: #0b1c26;
         }
-        
+        .hero-slideshow {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0;
+            transition: opacity 1.8s ease;
+        }
+        .slide.active { opacity: 1; z-index: 2; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(105deg, rgba(8,25,35,0.8) 10%, rgba(20,40,50,0.55) 70%);
+            z-index: 3;
+            pointer-events: none;
+        }
         .hero-content {
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 40px;
+            position: relative;
+            z-index: 10;
+            background: rgba(8, 25, 35, 0.7);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 48px 48px;
             margin-left: 8%;
-            max-width: 520px;
-            border-radius: 8px;
+            max-width: 620px;
+            border-radius: 32px;
+            border-left: 6px solid var(--primary);
+            box-shadow: var(--shadow-lg);
         }
-        
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
             color: white;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-        }
-        
         .hero-slogan {
-            color: #ffcc00;
-            font-size: 1.1rem;
+            color: #ffd966;
+            font-size: 1.3rem;
             font-style: italic;
-            margin-bottom: 25px;
-            border-left: 3px solid var(--primary);
-            padding-left: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            padding-left: 18px;
         }
-        
-        /* Grid Layout for Cards */
+
+        /* ------ GROUP DEPARTURES (elevated) ------ */
+        .group-departures {
+            background: linear-gradient(rgba(6,18,26,0.95), rgba(6,18,26,0.95)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        .group-departures .section-title h2 { color: white; }
+        .group-departures .section-title p { color: #d0e0e8; }
+        .departure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 30px;
+        }
+        .departure-card {
+            background: rgba(18, 40, 54, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            border: 1px solid rgba(255,215,0,0.12);
+            transition: all 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .departure-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: rgba(25, 50, 65, 0.9);
+            box-shadow: 0 24px 44px rgba(0,0,0,0.5);
+        }
+        .departure-header {
+            background: rgba(179, 0, 0, 0.8);
+            padding: 24px 16px;
+            text-align: center;
+        }
+        .departure-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        .departure-content {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .departure-price {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #ffd966;
+            margin: 18px 0 8px;
+        }
+        .departure-price span {
+            font-size: 1rem;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+        .availability {
+            background: #1f7a4c;
+            padding: 6px 18px;
+            border-radius: 60px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+            align-self: flex-start;
+        }
+
+        /* ------ BEST TIME – MONTHLY SEASON COLORS & CLICKABLE (Altezza style) ------ */
+        .best-time-safari {
+            padding: 0;
+            background: white;
+        }
+        .safari-hero-image {
+            width: 100%;
+            height: 50vh;
+            min-height: 380px;
+            background-image: url('https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .safari-hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 30, 38, 0.6);
+            z-index: 1;
+        }
+        .safari-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 780px;
+            padding: 0 20px;
+        }
+        .safari-hero-content h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: white;
+            text-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        .safari-content-wrapper {
+            padding: 80px 6%;
+            background: #fcf9f7;
+        }
+        /* NEW: legend inline under intro */
+        .season-legend-compact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 24px 0 16px;
+            padding: 12px 20px;
+            background: rgba(255,255,240,0.7);
+            border-radius: 60px;
+            font-weight: 600;
+        }
+        .legend-dot {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        /* MONTH GRID – COLORED BY SEASON */
+        .month-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .month-badge {
+            min-width: 75px;
+            padding: 14px 8px;
+            border-radius: 60px;
+            font-weight: 700;
+            text-align: center;
+            border: none;
+            color: white;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            font-size: 1rem;
+        }
+        .month-badge:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            box-shadow: var(--shadow-md);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .month-badge.active-month {
+            border: 3px solid #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(255,215,0,0.6);
+            transform: scale(1.08);
+        }
+        /* Season background colors */
+        .dry-month { background: var(--dry); }
+        .shoulder-month { background: var(--shoulder); color: #1e2f4e; } /* dark text for yellow */
+        .rainy-month { background: var(--rainy); }
+
+        .season-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        .legend-color {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+        }
+        .dry-color { background: var(--dry); }
+        .shoulder-color { background: var(--shoulder); }
+        .rainy-color { background: var(--rainy); }
+
+        /* MONTH DETAIL CARD (dynamic) */
+        .month-detail-card {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 36px;
+            background: white;
+            border-radius: 36px;
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #f3e1d8;
+            margin-top: 24px;
+            transition: 0.2s;
+        }
+        .month-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        .temp-box {
+            background: #0a1c2a;
+            color: white;
+            border-radius: 28px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .temp-value {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #ffd966;
+        }
+        .season-tag {
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-weight: 600;
+            color: white;
+            margin-right: 10px;
+            margin-bottom: 8px;
+        }
+        .tag-dry { background: var(--dry); }
+        .tag-shoulder { background: var(--shoulder); color: #2c3e50; }
+        .tag-rainy { background: var(--rainy); }
+
+        /* ------ ABOUT – updated OUR MISSION with long text ------ */
+        .about-us {
+            background: white;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .why-choose-detailed, .mission-card {
+            background: white;
+            padding: 48px 44px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #f2e6df;
+            transition: 0.25s;
+        }
+        .mission-card {
+            background: #0a1c2a;
+            color: white;
+            border: 1px solid #254e5c;
+        }
+        .why-choose-detailed:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+        .mission-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+        }
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 18px;
+            display: flex;
+            gap: 14px;
+            font-size: 1.02rem;
+        }
+        .feature-list li i {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        /* mission extended text */
+        .mission-full {
+            font-size: 1.04rem;
+            line-height: 1.7;
+            color: #f0f8fa;
+            margin-top: 16px;
+        }
+
+        /* ------ CARDS (clean) ------ */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 32px;
         }
-        
-        /* Card Styles */
         .card {
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            overflow: hidden;
             background: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s;
+            border: 1px solid #f0eae6;
         }
-        
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: #c4aa9b;
         }
-        
         .card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        
         .card div {
-            padding: 18px;
+            padding: 24px 22px 28px;
         }
-        
-        .card h3 {
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-        
-        .card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        /* Group Departures Section */
-        .group-departures {
-            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-        }
-        
-        .group-departures .section-title h2 {
-            color: white;
-        }
-        
-        .group-departures .section-title p {
-            color: #ddd;
-        }
-        
-        .departure-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .departure-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .departure-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        
-        .departure-header {
-            background: rgba(179, 0, 0, 0.8);
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .departure-header h3 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .departure-content {
-            padding: 25px;
-        }
-        
-        .departure-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .departure-info-item {
-            text-align: center;
-        }
-        
-        .departure-info-item i {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .departure-price {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: white;
-            margin: 20px 0;
-        }
-        
-        .departure-price span {
-            font-size: 1rem;
-            color: #ccc;
-            font-weight: normal;
-        }
-        
-        .availability {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        
-        .availability.closed {
-            background: #999;
-        }
-        
-        .date-notice {
-            font-size: 0.9rem;
-            color: #ffcc00;
-            text-align: center;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        
-        /* Alternate Section Background */
-        .alt-bg {
-            background: var(--light);
-        }
-        
-        /* Why Choose Us Section */
-        .why-choose-us {
-            background: var(--dark);
-            color: white;
-        }
-        
-        .why-choose-us .section-title h2 {
-            color: white;
-        }
-        
-        .why-choose-us .section-title p {
-            color: #ddd;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-        }
-        
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        /* Parks Section */
-        .parks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .park-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .park-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .park-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .park-content {
-            padding: 25px;
-        }
-        
-        /* Contact Section */
+
+        /* ------ CONTACT refined ------ */
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 44px;
         }
-        
         .contact-info {
-            background: var(--dark);
+            background: #0f2a36;
             color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            padding: 48px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
         }
-        
         .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--primary);
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 32px;
         }
-        
         .contact-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
-        
         .contact-item i {
             color: var(--primary);
-            font-size: 1.3rem;
-            margin-right: 15px;
-            margin-top: 5px;
+            font-size: 1.6rem;
+            margin-right: 18px;
         }
-        
         .contact-form {
             background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            padding: 48px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #f2e6df;
         }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--dark);
-            font-weight: 600;
-        }
-        
         .form-control {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+            padding: 14px 20px;
+            border: 1px solid #dde2e5;
+            border-radius: 50px;
+            font-size: 0.98rem;
         }
-        
         .form-control:focus {
-            outline: none;
             border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(178,34,34,0.08);
         }
-        
-        /* Footer */
+        select.form-control {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3e50'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            background-size: 20px;
+        }
+
+        /* ------ FOOTER crisp, with white quick links ------ */
         footer {
-            background: #111;
-            color: #ccc;
-            padding: 40px 8%;
+            background: #07121b;
+            color: #cbd8dd;
+            padding: 64px 6% 32px;
         }
-        
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        footer a:hover {
-            color: var(--primary);
-        }
-        
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 48px;
             margin-bottom: 40px;
         }
-        
         .footer-col h3, .footer-col h4 {
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.5rem;
-            position: relative;
-        }
-        
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        .footer-col p {
-            margin-bottom: 10px;
-        }
-        
-        .company-slogan {
-            color: #ffcc00;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-        
-        .social-icons {
-            display: flex;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
             color: white;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+        .footer-col a {
+            color: white !important;
             text-decoration: none;
+            transition: opacity 0.2s;
         }
-        
-        .social-icons a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
+        .footer-col a:hover {
+            opacity: 0.85;
+            text-decoration: underline;
         }
-        
+        .footer-col .social-icons a {
+            display: inline-flex;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            color: white;
+            transition: transform 0.2s;
+            background: transparent; 
+        }
+        /* brand colors for footer icons – no background boxes */
+        .footer-col .social-icons a[href*="facebook"] { color: #1877f2; background: transparent; }
+        .footer-col .social-icons a[href*="instagram"] { color: #e4405f; background: transparent; }
+        .footer-col .social-icons a[href*="wa.me"] { color: #25d366; background: transparent; }
+        .footer-col .social-icons a[href*="youtube"] { color: #ff0000; background: transparent; }
+        .footer-col .social-icons a:hover { transform: translateY(-5px); filter: brightness(1.15); }
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
+            padding-top: 28px;
+            border-top: 1px solid #2a404e;
+            color: #96acb3;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            section {
-                padding: 60px 5%;
-            }
-            
-            .topbar {
-                padding: 12px 5%;
-            }
+
+        /* ------ RESPONSIVE TWEAKS ------ */
+        @media (max-width: 1100px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
+            .month-detail-card { grid-template-columns: 1fr; }
         }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
+        @media (max-width: 800px) {
+            .mobile-menu-btn { display: block; }
             nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                background: #000;
-                width: 100%;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all 0.3s ease;
-                box-shadow: var(--shadow);
-                z-index: 999;
+                position: fixed; top: 80px; left: 0; width: 100%;
+                background: #0f2c38; flex-direction: column; padding: 28px;
+                transform: translateY(-150%); opacity: 0; transition: 0.4s;
+                backdrop-filter: blur(16px); border-top: 1px solid #3d5a64;
+                z-index: 998;
             }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            nav a {
-                margin: 10px 0;
-                font-size: 1.2rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            
-            .hero-content {
-                margin-left: 5%;
-                margin-right: 5%;
-                padding: 30px;
-            }
-            
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .logo h1 {
-                font-size: 1.5rem;
-            }
-            
-            .slogan {
-                font-size: 0.7rem;
-            }
+            nav.active { transform: translateY(0); opacity: 1; }
+            nav a { margin: 12px 0; font-size: 1.2rem; }
+            .hero-content { margin-left: 5%; margin-right: 5%; padding: 36px; }
+            .hero h1 { font-size: 2.4rem; }
+            .floating-social { display: none; }
+            .safari-hero-content h2 { font-size: 2.2rem; }
         }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .contact-info, .contact-form {
-                padding: 25px;
-            }
-            
-            section {
-                padding: 50px 5%;
-            }
-            
-            .topbar {
-                padding: 10px 5%;
-            }
-            
-            .departure-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo h1 {
-                font-size: 1.3rem;
-            }
-            
-            .slogan {
-                font-size: 0.65rem;
-            }
+        @media (max-width: 550px) {
+            .logo h1 { font-size: 1.3rem; }
+            .hero h1 { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Floating Button -->
+    <!-- FLOATING SOCIAL (left, no boxes, just icons) -->
+    <div class="floating-social">
+        <a href="https://www.facebook.com/vacationawaitsadventure" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/vacation_awaits_adventure?igsh=MTJvc295c3dibWczcw%3D%3D&utm_source=qr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/255753437120" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/@vacationawaitsadventure" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <!-- FLOATING WHATSAPP (right) -->
     <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20your%20Tanzania%20tours." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
-        <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+        <span class="whatsapp-tooltip">Chat with us now</span>
     </a>
 
-    <!-- Header & Navigation -->
+    <!-- HEADER -->
     <header>
         <div class="topbar">
             <a href="#" class="logo">
-                <i class="fas fa-compass"></i>
+                <i class="fas fa-map-compass"></i>
                 <div class="logo-text">
-                    <h1>Vacation Awaits Adventure</h1>
+                    <h1>Vacation Awaits <span>Adventure</span></h1>
                     <div class="slogan">Where Dreams Meet Adventure</div>
                 </div>
             </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
             <nav id="mainNav">
                 <a href="#home">Home</a>
                 <a href="#departures">Group Departures</a>
                 <a href="#safaris">Safari</a>
                 <a href="#trekking">Trekking</a>
                 <a href="#zanzibar">Zanzibar</a>
-                <a href="#parks">National Parks</a>
-                <a href="#why-us">Why Us</a>
+                <a href="#parks">Parks</a>
+                <a href="#best-time">Best Time</a>
+                <a href="#about">About Us</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO SLIDESHOW -->
     <section class="hero" id="home">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448848a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506461883276-594a12b11cf3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+        </div>
         <div class="hero-content">
             <h1>Experience Tanzania Like Never Before</h1>
             <div class="hero-slogan">Where Dreams Meet Adventure</div>
-            <p>Mount Kilimanjaro trekking, luxury safaris & Zanzibar beach holidays with Vacation Awaits Adventure. We operate in all national parks and conservation areas across Tanzania.</p>
-            <a class="btn" href="#departures">View Group Departures</a>
+            <p style="font-size:1.2rem; margin-bottom:28px;">Kilimanjaro, Big Five safaris & Zanzibar – we operate in every national park. Join our group departures with guaranteed dates!</p>
+            <a class="btn" href="#departures">📅 View Group Departures</a>
         </div>
     </section>
 
-    <!-- Group Departures Section -->
+    <!-- GROUP DEPARTURES -->
     <section class="group-departures" id="departures">
         <div class="container">
             <div class="section-title">
                 <h2>Tanzania Group Departure Packages</h2>
-                <p>Kilimanjaro & Safari Group Departures - Join our scheduled group tours for an unforgettable adventure with fellow travelers</p>
+                <p>Kilimanjaro & Safari Group Tours – join scheduled departures with fellow adventurers. Regular monthly departures.</p>
             </div>
-            
-            <div class="intro-text" style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 1.2rem; color: #eee; line-height: 1.8;">
-                    "Climbing Mount Kilimanjaro" – the highest peak of Africa is on the bucket list of most adventure enthusiasts. Climbing Kilimanjaro gives a truly unique wilderness experience as you ascend to the peak of the world's highest free-standing mountain.
-                </p>
-                <p class="date-notice" style="margin-top: 20px;">
-                    <i class="fas fa-sync-alt"></i> <strong>Automatic Monthly Updates:</strong> Our group departure dates automatically update monthly. All dates shown are for the current and upcoming months.
-                </p>
+            <div style="max-width:800px; margin:0 auto 40px; text-align:center; color:#eee;">
+                <p style="font-size:1.2rem;"><i class="fas fa-quote-left" style="color:#b30000;"></i> Climbing Mount Kilimanjaro – the highest peak of Africa – is a bucket-list adventure. We offer ethical, success-oriented climbs. <i class="fas fa-quote-right" style="color:#b30000;"></i></p>
             </div>
-            
             <div class="departure-grid">
-                <!-- Kilimanjaro Group Departures -->
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Climbing Kilimanjaro</h3>
-                        <p>7 Days | Machame Route</p>
+                <!-- departure cards -->
+                <div class="departure-card"><div class="departure-header"><h3>Kilimanjaro Machame</h3><p>7 Days (scenic route)</p></div><div class="departure-content"><div class="departure-price">$1,969 <span>p.p.</span></div><span class="availability">✅ Guaranteed</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%207-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN GROUP</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Lemosho Route</h3><p>8 Days (high success)</p></div><div class="departure-content"><div class="departure-price">$2,251 <span>p.p.</span></div><span class="availability">✅ Open</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%208-Day%20Lemosho%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN GROUP</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Big 5 Safari</h3><p>7 Days / 6 Nights</p></div><div class="departure-content"><div class="departure-price">$2,651 <span>p.p.</span></div><span class="availability">✅ 4 spots left</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%207-Day%20Big%205%20Tanzania%20Safari%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN SAFARI</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Cultural Safari</h3><p>11 Days / 10 Nights</p></div><div class="departure-content"><div class="departure-price">$2,530 <span>p.p.</span></div><span class="availability">✅ Open</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%2011-Day%20Cultural%20Safari%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN GROUP</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Machame 6 Days</h3><p>Express trek</p></div><div class="departure-content"><div class="departure-price">$1,687 <span>p.p.</span></div><span class="availability">✅ 2 spots</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%206-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Marangu Route</h3><p>6 Days (hut)</p></div><div class="departure-content"><div class="departure-price">$1,556 <span>p.p.</span></div><span class="availability">✅ Open</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%206-Day%20Marangu%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> BOOK</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Lemosho (II)</h3><p>8 Days</p></div><div class="departure-content"><div class="departure-price">$2,251 <span>p.p.</span></div><span class="availability">✅ 5 spots</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20second%208-Day%20Lemosho%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN</a></div></div>
+                <div class="departure-card"><div class="departure-header"><h3>Machame (II)</h3><p>7 Days</p></div><div class="departure-content"><div class="departure-price">$1,969 <span>p.p.</span></div><span class="availability">✅ Open</span><br><a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20second%207-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" style="width:100%; margin-top:12px;" target="_blank"><i class="fab fa-whatsapp"></i> JOIN</a></div></div>
+            </div>
+            <div style="text-align:center; margin-top:50px;">
+                <a href="#contact" class="btn btn-secondary" style="margin-right:12px;">📝 Customize your tour</a>
+                <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I%20need%20help%20with%20group%20departures." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp inquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR SAFARIS -->
+    <section id="safaris" style="background:#fefcf9;"><div class="section-title"><h2>Popular Safaris</h2><p>Unforgettable wildlife encounters with expert local guides.</p></div><div class="grid"><div class="card"><img src="https://images.unsplash.com/photo-1626483644770-60a8b8e7bff3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Serengeti"><div><h3>Serengeti Migration</h3><p>Witness the great wildebeest migration – July to October.</p><a class="btn" href="https://wa.me/255753437120?text=Hello!%20Interested%20in%20Serengeti%20Migration%20Safari" target="_blank">📲 Inquire</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1598894597310-b524fea0368e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ngorongoro"><div><h3>Ngorongoro Crater</h3><p>Wildlife paradise in the world's largest caldera.</p><a class="btn" href="https://wa.me/255753437120?text=Hello!%20Ngorongoro%20Crater%20tour%20inquiry" target="_blank">📲 Inquire</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1578662990686-2fcd7d6d6e7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Manyara"><div><h3>Lake Manyara</h3><p>Tree-climbing lions & flamingos.</p><a class="btn" href="https://wa.me/255753437120?text=Hello!%20Lake%20Manyara%20safari%20interest" target="_blank">📲 Inquire</a></div></div></div></section>
+
+    <!-- KILIMANJARO ROUTES -->
+    <section id="trekking" style="background:#f3f1ed;"><div class="section-title"><h2>Kilimanjaro Routes</h2><p>Choose your path to Uhuru Peak.</p></div><div class="grid"><div class="card"><img src="https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machame"><div><h3>Machame</h3><p>Scenic “Whiskey” route, high success.</p><a class="btn" href="#departures">📅 Group dates</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1526393004023-b6df52a5d0de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lemosho"><div><h3>Lemosho</h3><p>Remote, high summit rate.</p><a class="btn" href="#departures">📅 Group dates</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1593693399742-6d4d5c6c40d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marangu"><div><h3>Marangu</h3><p>Hut accommodation, “Coca-Cola”.</p><a class="btn" href="#departures">📅 Group dates</a></div></div></div></section>
+
+    <!-- ZANZIBAR -->
+    <section id="zanzibar"><div class="section-title"><h2>Zanzibar Beach Holidays</h2><p>Pristine beaches & spice island magic.</p></div><div class="grid"><div class="card"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zanzibar beach"><div><h3>Beach Extension</h3><p>3–7 days relaxation at Nungwi/Kendwa.</p><a class="btn" href="https://wa.me/255753437120?text=Zanzibar%20beach%20extension%20inquiry" target="_blank">🏖️ Inquire</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stone Town"><div><h3>Stone Town</h3><p>UNESCO cultural heritage.</p><a class="btn" href="https://wa.me/255753437120?text=Stone%20Town%20tour%20inquiry" target="_blank">📿 Inquire</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1573843989-c9d9a2c4c1e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spice Tour"><div><h3>Spice Tour</h3><p>Discover Zanzibar's fragrant plantations.</p><a class="btn" href="https://wa.me/255753437120?text=Spice%20tour%20Zanzibar%20inquiry" target="_blank">🌶️ Inquire</a></div></div></div></section>
+
+    <!-- NATIONAL PARKS -->
+    <section id="parks" style="background:#fefcf9;"><div class="section-title"><h2>Tanzania's National Parks</h2><p>We operate in all wilderness areas.</p></div><div class="grid"><div class="card"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kilimanjaro"><div><h3>Kilimanjaro NP</h3><p>Africa's rooftop.</p><a class="btn" href="#departures">📅 Trek</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1536152471326-642d7bb4d0ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gombe"><div><h3>Gombe NP</h3><p>Chimpanzee trekking.</p><a class="btn" href="https://wa.me/255753437120?text=Gombe%20National%20Park%20safari" target="_blank">🐒 Inquire</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1536152471326-642d7bb4d0ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tarangire"><div><h3>Tarangire NP</h3><p>Elephants & baobabs.</p><a class="btn" href="https://wa.me/255753437120?text=Tarangire%20safari" target="_blank">🐘 Inquire</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ruaha"><div><h3>Ruaha NP</h3><p>Wild & remote.</p><a class="btn" href="https://wa.me/255753437120?text=Ruaha%20safari%20inquiry" target="_blank">🌿 Inquire</a></div></div></div></section>
+
+    <!-- BEST TIME TO GO ON SAFARI – COLORED CLICKABLE MONTHS (Altezza style) -->
+    <section class="best-time-safari" id="best-time">
+        <div class="safari-hero-image">
+            <div class="safari-hero-overlay"></div>
+            <div class="safari-hero-content">
+                <h2>When is the best time to go on safari?</h2>
+                <p>Discover Tanzania's seasons & wildlife calendar</p>
+            </div>
+        </div>
+        <div class="safari-content-wrapper">
+            <div class="safari-intro">
+                <h3 style="font-size:2rem; font-weight:700; margin-bottom:8px;">Safaris in Tanzania year-round</h3>
+                <!-- LEGEND – dry, shoulder, rainy – placed directly under headline (no boxes) -->
+                <div class="season-legend-compact">
+                    <span><span class="legend-dot" style="background:var(--dry);"></span> Dry season (Jan, Feb, Jul, Aug, Sep, Oct)</span>
+                    <span><span class="legend-dot" style="background:var(--shoulder);"></span> Shoulder season (Mar, Jun, Dec)</span>
+                    <span><span class="legend-dot" style="background:var(--rainy);"></span> Rainy season (Apr, May, Nov)</span>
+                </div>
+                <p style="font-size:1.18rem; color:#2e404b; margin-top:24px;">Safaris in Tanzania’s national parks operate year-round, but each season has its own characteristics. For example, July is typically dry but also the busiest month, while November brings more rainfall and far fewer visitors. Click on any month below to see detailed information.</p>
+            </div>
+            
+            <!-- MONTH GRID – COLORED BY SEASON (exact specification) -->
+            <div class="month-grid" id="monthGrid">
+                <!-- Dry months: Jan, Feb, Jul, Aug, Sep, Oct -->
+                <span class="month-badge dry-month" data-month="january">Jan</span>
+                <span class="month-badge dry-month" data-month="february">Feb</span>
+                <!-- Shoulder: Mar, Jun, Dec -->
+                <span class="month-badge shoulder-month" data-month="march">Mar</span>
+                <!-- Rainy: Apr, May, Nov -->
+                <span class="month-badge rainy-month" data-month="april">Apr</span>
+                <span class="month-badge rainy-month" data-month="may">May</span>
+                <!-- Shoulder: Jun -->
+                <span class="month-badge shoulder-month" data-month="june">Jun</span>
+                <!-- Dry: Jul, Aug, Sep, Oct -->
+                <span class="month-badge dry-month" data-month="july">Jul</span>
+                <span class="month-badge dry-month" data-month="august">Aug</span>
+                <span class="month-badge dry-month" data-month="september">Sep</span>
+                <span class="month-badge dry-month" data-month="october">Oct</span>
+                <!-- Rainy: Nov -->
+                <span class="month-badge rainy-month" data-month="november">Nov</span>
+                <!-- Shoulder: Dec -->
+                <span class="month-badge shoulder-month" data-month="december">Dec</span>
+            </div>
+
+            <!-- DYNAMIC MONTH DETAIL CARD (updated via JS) -->
+            <div class="month-detail-card" id="monthDetailCard">
+                <!-- January content by default -->
+                <div id="detailTextContainer">
+                    <div style="margin-bottom:20px;">
+                        <span class="season-tag tag-dry" id="detailSeasonTag">Dry season</span>
                     </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="trek-date" data-duration="7" data-route="machame"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="7" data-route="machame"></span></div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $1,969 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%207-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
+                    <div class="month-title" id="detailMonthTitle">January</div>
+                    <div style="font-size:1.3rem; color:#3b5a6b; margin:10px 0 20px;" id="detailSubtitle">Mid-summer in Tanzania</div>
+                    <p style="font-size:1.06rem; line-height:1.7;" id="detailDescription">
+                        The rainy season usually ends in January. Hot, mostly clear weather sets in, though occasional showers are still possible.
+                        The savanna is covered in fresh greenery, and elephants, giraffes, buffalo, lions, and many other animals can be seen throughout the parks. To witness the Great Migration, head to the southern Serengeti and the Ndutu region near the Ngorongoro border. This is where vast herds of wildebeest, zebras, and gazelles gather for the calving season.
+                    </p>
+                    <div style="margin-top:24px;" id="detailBadges">
+                        <span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 25°C / occasional rain</span>
                     </div>
                 </div>
-                
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Climbing Kilimanjaro</h3>
-                        <p>8 Days | Lemosho Route</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="trek-date" data-duration="8" data-route="lemosho"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="8" data-route="lemosho"></span></div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $2,251 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%208-Day%20Lemosho%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Safari Group Departures -->
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Big 5 Tanzania Safari</h3>
-                        <p>7 Days | 6 Nights</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="safari-date" data-duration="7"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Multiple dates available monthly</div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $2,651 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%207-Day%20Big%205%20Tanzania%20Safari%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>11 Days Cultural Safari</h3>
-                        <p>11 Days | 10 Nights</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="safari-date" data-duration="11"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Multiple dates available monthly</div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $2,530 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%2011-Day%20Cultural%20Safari%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Additional Kilimanjaro Departures -->
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Kilimanjaro Machame Route</h3>
-                        <p>7 Days | Machame Route</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="trek-date" data-duration="7" data-route="machame2"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="7" data-route="machame2"></span></div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $1,969 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20second%207-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Kilimanjaro Machame Route</h3>
-                        <p>6 Days | Machame Route</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="trek-date" data-duration="6" data-route="machame6"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="6" data-route="machame6"></span></div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $1,687 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%206-Day%20Machame%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Kilimanjaro Lemosho Route</h3>
-                        <p>8 Days | Lemosho Route</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="trek-date" data-duration="8" data-route="lemosho2"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="8" data-route="lemosho2"></span></div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $2,251 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20second%208-Day%20Lemosho%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="departure-card">
-                    <div class="departure-header">
-                        <h3>Kilimanjaro Marangu Route</h3>
-                        <p>6 Days | Marangu Route</p>
-                    </div>
-                    <div class="departure-content">
-                        <div class="departure-info">
-                            <div class="departure-info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>Trek: <span class="trek-date" data-duration="6" data-route="marangu"></span></div>
-                                <div style="font-size: 0.9rem; color: #ccc;">Arrival: <span class="arrival-date" data-duration="6" data-route="marangu"></span></div>
-                            </div>
-                        </div>
-                        <div class="departure-price">
-                            $1,556 <span>Per Person</span>
-                        </div>
-                        <div class="availability">Open</div>
-                        <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%206-Day%20Marangu%20Route%20Kilimanjaro%20group%20departure." class="btn btn-whatsapp" target="_blank" style="width: 100%; text-align: center;">
-                            <i class="fab fa-whatsapp"></i> JOIN THE GROUP
-                        </a>
+                <div class="temp-box" id="detailTempBox">
+                    <div style="font-size:1.2rem; margin-bottom:10px;">Average temperature</div>
+                    <div class="temp-value" id="detailTemp">25 °C</div>
+                    <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;" id="detailExtra">
+                        <span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Calving season</span>
+                        <span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> High season</span>
                     </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px;">
-                <h3 style="color: white; margin-bottom: 20px;">Safari And Climbing Mount Kilimanjaro</h3>
-                <p class="date-notice" style="margin-bottom: 20px;">
-                    <i class="fas fa-info-circle"></i> <strong>Note:</strong> All group departure dates automatically update at the beginning of each month. Book early to secure your spot!
-                </p>
-                <a href="#contact" class="btn btn-secondary" style="margin: 10px;">Customize Your Tour</a>
-                <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I%20have%20questions%20about%20your%20group%20departures%20and%20would%20like%20more%20information." class="btn btn-whatsapp" target="_blank" style="margin: 10px;">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Inquiry
-                </a>
+            <div style="text-align:center; margin-top:36px; color:#56707b;">
+                <i class="fas fa-info-circle"></i> Peak wildlife viewing: June–October • Calving: January–February • Green season: November–May
             </div>
         </div>
     </section>
 
-    <!-- Popular Safaris Section -->
-    <section id="safaris">
-        <div class="section-title">
-            <h2>Popular Safaris</h2>
-            <p>Explore Tanzania's most incredible wildlife destinations with our expert-guided safari tours.</p>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1626483644770-60a8b8e7bff3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safari">
-                <div>
-                    <h3>Serengeti Migration Safari</h3>
-                    <p>Witness the great wildebeest migration in the world-famous Serengeti plains.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20the%20Serengeti%20Migration%20Safari." target="_blank">Inquire on WhatsApp</a>
-                </div>
+    <!-- ABOUT US – with expanded OUR MISSION text -->
+    <section class="about-us" id="about">
+        <div class="section-title"><h2>About Us</h2><p>Your trusted local partner for authentic Tanzanian adventures since 2012.</p></div>
+        <div class="about-grid">
+            <div class="why-choose-detailed">
+                <h3 style="font-size:2rem; font-weight:700; color:var(--primary); display:flex; gap:12px;"><i class="fas fa-star" style="color:#ffb700;"></i> Why Choose Us</h3>
+                <div style="font-size:1.04rem; color:#1e2f4e; margin-bottom:30px; border-bottom:1px solid #f0dacf; padding-bottom:24px;"><strong>Vacation Awaits Adventure</strong> is a premier travel and safari company dedicated to delivering authentic, immersive, and unforgettable travel experiences. We specialize in curated safari adventures, cultural explorations, mountain trekking, and tailor-made holiday packages designed to showcase the true beauty of Tanzania and East Africa.</div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>100% local Tanzanian owned</strong> – we invest in our communities.</li>
+                    <li><i class="fas fa-trophy"></i> <strong>Award-winning guides</strong> – certified, English-speaking, passionate.</li>
+                    <li><i class="fas fa-shield"></i> <strong>Safety first</strong> – Kilimanjaro success rate >95%, emergency protocols.</li>
+                    <li><i class="fas fa-tree"></i> <strong>Eco‑responsible</strong> – carbon‑neutral tours, plastic‑free safaris.</li>
+                    <li><i class="fas fa-hand-holding-heart"></i> <strong>Flexible booking</strong> – free changes, deposit only.</li>
+                </ul>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1598894597310-b524fea0368e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safari">
-                <div>
-                    <h3>Ngorongoro Crater Tour</h3>
-                    <p>Amazing wildlife in the world's largest intact volcanic caldera.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20the%20Ngorongoro%20Crater%20Tour." target="_blank">Inquire on WhatsApp</a>
+            <div class="mission-card">
+                <h3 style="font-size:2rem; font-weight:700; color:#fdd835;"><i class="fas fa-bullseye"></i> Our Mission</h3>
+                <div class="mission-full">
+                    <p style="margin-bottom:16px;">Our mission is to create exceptional and transformative travel experiences that inspire, connect, and leave lasting memories. We are committed to delivering personalized, safe, and high-quality adventures that showcase the natural beauty, wildlife, and rich cultural heritage of Tanzania and East Africa.</p>
+                    <p style="margin-bottom:16px;">We strive to exceed our clients’ expectations through professionalism, integrity, and attention to detail while promoting responsible tourism that supports local communities and protects the environment for future generations.</p>
+                    <p>We believe that every journey should be more than just a trip — it should be an unforgettable adventure.</p>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1578662990686-2fcd7d6d6e7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safari">
-                <div>
-                    <h3>Lake Manyara Safari</h3>
-                    <p>Tree-climbing lions & flocks of pink flamingos in this scenic park.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20the%20Lake%20Manyara%20Safari." target="_blank">Inquire on WhatsApp</a>
-                </div>
+                <div style="color:#ffd966; font-size:1.4rem; font-style:italic; border-top:1px solid #3c616d; padding-top:24px; margin-top:16px;"><i class="fas fa-quote-left"></i> Where Dreams Meet Adventure <i class="fas fa-quote-right"></i></div>
+                <p style="margin-top:28px; color:#ffe08c; font-weight:600;">Since 2012, over 8,500 happy travellers.</p>
             </div>
         </div>
     </section>
 
-    <!-- Kilimanjaro Routes Section -->
-    <section class="alt-bg" id="trekking">
-        <div class="section-title">
-            <h2>Kilimanjaro Routes</h2>
-            <p>Choose the perfect path to conquer Africa's highest peak with our experienced guides.</p>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machame Route">
-                <div>
-                    <h3>Machame Route</h3>
-                    <p>Most scenic and popular route with beautiful landscapes and good acclimatization.</p>
-                    <a class="btn" href="#departures">View Group Departures</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1526393004023-b6df52a5d0de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lemosho Route">
-                <div>
-                    <h3>Lemosho Route</h3>
-                    <p>Best success rate with gradual ascent through remote and beautiful wilderness.</p>
-                    <a class="btn" href="#departures">View Group Departures</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1593693399742-6d4d5c6c40d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marangu Route">
-                <div>
-                    <h3>Marangu Route</h3>
-                    <p>Known as the "Coca-Cola" route with hut accommodation all the way.</p>
-                    <a class="btn" href="#departures">View Group Departures</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Zanzibar Section -->
-    <section id="zanzibar">
-        <div class="section-title">
-            <h2>Zanzibar Beach Holidays</h2>
-            <p>Relax on pristine white sand beaches after your Tanzanian adventure.</p>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zanzibar Beach">
-                <div>
-                    <h3>Zanzibar Beach Extension</h3>
-                    <p>Add 3-7 days of relaxation on Zanzibar's beautiful beaches after your safari or climb.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Zanzibar%20beach%20holidays." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stone Town">
-                <div>
-                    <h3>Stone Town Cultural Tour</h3>
-                    <p>Explore the historic Stone Town, a UNESCO World Heritage Site.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Stone%20Town%20cultural%20tours." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1573843989-c9d9a2c4c1e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spice Tour">
-                <div>
-                    <h3>Zanzibar Spice Tour</h3>
-                    <p>Discover why Zanzibar is called the "Spice Island" with a guided tour of spice plantations.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Zanzibar%20spice%20tours." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- National Parks Section -->
-    <section id="parks">
-        <div class="section-title">
-            <h2>Tanzania's National Parks</h2>
-            <p>We operate in all of Tanzania's incredible national parks and conservation areas.</p>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mount Kilimanjaro">
-                <div>
-                    <h3>Kilimanjaro National Park</h3>
-                    <p>Home to Africa's highest peak and unique montane ecosystems.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Kilimanjaro%20National%20Park%20tours." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-             <div class="card">
-                <img src="https://images.unsplash.com/photo-1536152471326-642d7bb4d0ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tarangire National Park">
-                <div>
-                    <h3>Gombe National Park</h3>
-                    <p>It is a thin strip of ancient forest set in mountainous cut with steep valleys clinging to the shores of Lake Tanganyika.</p>
-
-                     <p>The park major attraction is obviously the Chimpanzees that live protected within its boundaries.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Tarangire%20National%20Park%20safaris." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1536152471326-642d7bb4d0ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tarangire National Park">
-                <div>
-                    <h3>Tarangire National Park</h3>
-                    <p>Famous for its large elephant herds and ancient baobab trees.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Tarangire%20National%20Park%20safaris." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ruaha National Park">
-                <div>
-                    <h3>Ruaha National Park</h3>
-                    <p>Tanzania's largest national park with rugged wilderness and abundant wildlife.</p>
-                    <a class="btn" href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20Ruaha%20National%20Park%20safaris." target="_blank">Inquire on WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us" id="why-us">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Vacation Awaits Adventure</h2>
-                <p>We are committed to providing unforgettable Tanzanian experiences with safety, expertise, and local knowledge.</p>
-            </div>
-            
-            <div class="grid">
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Local Experts</h3>
-                    <p>Professional Tanzanian guides with extensive knowledge of wildlife, culture, and terrain.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safe & Trusted</h3>
-                    <p>Licensed & insured operator with excellent safety record and emergency protocols.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Custom Tours</h3>
-                    <p>Tailor‑made itineraries designed to match your interests, budget, and time frame.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact">
-        <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Get in touch with our team in Arusha to start planning your Tanzanian adventure today.</p>
-        </div>
-        
+        <div class="section-title"><h2>Contact Us</h2><p>Arusha office – let's plan your journey.</p></div>
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Company Information</h3>
-                
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Main Office Address</h4>
-                        <p>Mbauda, Arusha, Tanzania<br>P.O.BOX 11687</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-hashtag"></i>
-                    <div>
-                        <h4>TIN Number</h4>
-                        <p>110-191-529</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <div>
-                        <h4>Operating Areas</h4>
-                        <p>All National Parks and Conservation Areas in Tanzania</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h4>Phone & WhatsApp</h4>
-                        <p>+255753437120</p>
-                        <small style="color: #ccc;">Click the WhatsApp button to chat instantly</small>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email Address</h4>
-                        <p>info@vacationawaits.co.tz</p>
-                    </div>
-                </div>
-                
-                <div class="company-slogan" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                    <i class="fas fa-quote-left" style="color: #ffcc00; margin-right: 5px;"></i>
-                    <strong>Where Dreams Meet Adventure</strong>
-                    <i class="fas fa-quote-right" style="color: #ffcc00; margin-left: 5px;"></i>
-                </div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4 style="color:white;">Main Office</h4><p style="color:#e0edf0;">Mbauda, Arusha, Tanzania<br>P.O.BOX 11687</p></div></div>
+                <div class="contact-item"><i class="fas fa-hashtag"></i><div><h4 style="color:white;">TIN Number</h4><p style="color:#e0edf0;">110-191-529</p></div></div>
+                <div class="contact-item"><i class="fas fa-phone-alt"></i><div><h4 style="color:white;">Phone & WhatsApp</h4><p style="color:#e0edf0;">+255753437120</p></div></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><div><h4 style="color:white;">Email</h4><p style="color:#e0edf0;">info@vacationawaits.co.tz</p></div></div>
+                <div style="margin-top:20px; font-style:italic; color:#ffd966; font-size:1.2rem;"><i class="fas fa-quote-left"></i> Where Dreams Meet Adventure <i class="fas fa-quote-right"></i></div>
             </div>
-            
             <div class="contact-form">
-                <h3>Send us a Message</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="tour">Tour of Interest</label>
-                        <select id="tour" class="form-control">
-                            <option value="">Select a Tour</option>
-                            <option value="group-departure">Group Departure Package</option>
-                            <option value="safari">Safari Tours</option>
-                            <option value="kilimanjaro">Kilimanjaro Trekking</option>
-                            <option value="zanzibar">Zanzibar Beach Holiday</option>
-                            <option value="custom">Custom Tour</option>
+                <h3 style="font-size:2rem; color:#0a1c2a; margin-bottom:28px;">Send us a Message</h3>
+                <form id="contactForm" action="mailto:info@vacationawaits.co.tz" method="post" enctype="text/plain">
+                    <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="Name" class="form-control" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="Email" class="form-control" required></div>
+                    <div class="form-group"><label for="travelDate">📅 Preferred Travel Date</label><input type="date" id="travelDate" name="Travel_Date" class="form-control" required></div>
+                    <div class="form-group"><label for="tour">Tour of Interest</label>
+                        <select id="tour" name="Tour_Interest" class="form-control">
+                            <option>Select a Tour</option><option>Group Departure</option><option>Safari</option><option>Kilimanjaro</option><option>Zanzibar</option><option>Custom</option>
                         </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="Travellers">Number of travellers</label>
-                        <input type="Travellers" id="Travellers" class="form-control" placeholder="Number of Travellers" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your dream Tanzanian adventure..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Send Message</button>
-                    <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I%20have%20a%20question%20about%20your%20tours." class="btn btn-whatsapp" target="_blank" style="margin-left: 10px;">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                    <div class="form-group"><label for="Travellers">Number of travellers</label><input type="number" id="Travellers" name="Travellers" class="form-control" placeholder="e.g. 2" required></div>
+                    <div class="form-group"><label for="message">Your Message</label><textarea id="message" name="Message" class="form-control" rows="4" required></textarea></div>
+                    <button type="submit" class="btn">✉️ Send Message</button>
+                    <a href="https://wa.me/255753437120?text=Hello%20Vacation%20Awaits%20Adventure!%20I%20have%20a%20question." class="btn btn-whatsapp" style="margin-left:10px;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </form>
+                <p style="margin-top:18px; font-size:0.9rem; color:#5f747b;"><i class="fas fa-envelope"></i> This form opens your email client to send to info@vacationawaits.co.tz.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>Vacation Awaits Adventure</h3>
-                <p>Tanzania safari, trekking & beach holidays. Operating in all national parks and conservation areas across Tanzania.</p>
-                <div class="company-slogan">Where Dreams Meet Adventure</div>
+                <p style="color:#c2d6dc;">Tanzania safari, trekking & beach holidays. Operating in all parks.</p>
+                <div style="color:#fdd835; margin:20px 0; font-style:italic;">Where Dreams Meet Adventure</div>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/vacationawaitsadventure" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/vacation_awaits_adventure?igsh=MTJvc295c3dibWczcw%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/255753437120" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/@vacationawaitsadventure" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <p><a href="#home">Home</a></p>
                 <p><a href="#departures">Group Departures</a></p>
-                <p><a href="#safaris">Safari Tours</a></p>
-                <p><a href="#trekking">Kilimanjaro Trekking</a></p>
-                <p><a href="#zanzibar">Zanzibar Holidays</a></p>
-                <p><a href="#parks">National Parks</a></p>
+                <p><a href="#safaris">Safari</a></p>
+                <p><a href="#trekking">Trekking</a></p>
+                <p><a href="#zanzibar">Zanzibar</a></p>
+                <p><a href="#best-time">Best Time</a></p>
+                <p><a href="#about">About Us</a></p>
             </div>
-            
             <div class="footer-col">
                 <h4>Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt" style="color:var(--primary); margin-right:10px;"></i> Mbauda, Arusha, Tanzania</p>
-                <p><i class="fas fa-envelope" style="color:var(--primary); margin-right:10px;"></i> info@vacationawaits.co.tz</p>
-                <p><i class="fas fa-phone-alt" style="color:var(--primary); margin-right:10px;"></i> +255753437120</p>
-                <p><i class="fas fa-hashtag" style="color:var(--primary); margin-right:10px;"></i> TIN: 110-191-529</p>
-                <p><i class="fas fa-box" style="color:var(--primary); margin-right:10px;"></i> P.O.BOX 11687</p>
+                <p><i class="fas fa-map-marker-alt" style="color:var(--primary); margin-right:8px;"></i> Mbauda, Arusha</p>
+                <p><i class="fas fa-envelope" style="color:var(--primary); margin-right:8px;"></i> info@vacationawaits.co.tz</p>
+                <p><i class="fas fa-phone-alt" style="color:var(--primary); margin-right:8px;"></i> +255753437120</p>
+                <p><i class="fas fa-hashtag" style="color:var(--primary); margin-right:8px;"></i> TIN: 110-191-529</p>
+                <p><i class="fas fa-box" style="color:var(--primary); margin-right:8px;"></i> P.O.BOX 11687</p>
             </div>
         </div>
-        
         <div class="copyright">
-            <p>&copy; 2023-<span id="currentYear"></span> Vacation Awaits Adventure. All rights reserved. | Mbauda, Arusha, Tanzania | TIN: 110-191-529 | Last updated: <span id="lastUpdated"></span></p>
-            <p style="margin-top: 10px; color: #ffcc00;"><i>Where Dreams Meet Adventure</i></p>
+            <p>&copy; 2023-<span id="currentYear"></span> Vacation Awaits Adventure. All rights reserved. | Last updated: <span id="lastUpdated"></span></p>
+            <p style="color:#ffd966; margin-top:6px;"><i>Where Dreams Meet Adventure</i></p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+        // ---------- HERO SLIDESHOW ----------
+        const slides = document.querySelectorAll('.hero-slideshow .slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+
+        // ---------- MOBILE MENU ----------
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-        
-        // Close mobile menu when clicking a link
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => { nav.classList.remove('active'); mobileBtn.innerHTML = '<i class="fas fa-bars"></i>'; });
         });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const tour = document.getElementById('tour').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show an alert
-            alert(`Thank you ${name}! Your inquiry has been received. We will contact you at ${email} shortly to discuss ${tour ? 'the ' + document.getElementById('tour').options[document.getElementById('tour').selectedIndex].text : 'your custom tour'}.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-        
-        // Smooth scrolling for navigation links
+
+        // ---------- SMOOTH SCROLL ----------
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
             });
         });
-        
-        // WhatsApp button click tracking
-        document.querySelector('.whatsapp-float').addEventListener('click', function() {
-            console.log('WhatsApp button clicked');
+
+        // ---------- FOOTER YEAR & LAST UPDATED ----------
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+
+        // ---------- INTERACTIVE MONTHS – SEASON COLORS & DETAIL CARDS ----------
+        const monthData = {
+            january: {
+                season: 'dry', seasonTag: 'Dry season', tagClass: 'tag-dry',
+                title: 'January', subtitle: 'Mid-summer in Tanzania',
+                description: 'The rainy season usually ends in January. Hot, mostly clear weather sets in, though occasional showers are still possible. The savanna is covered in fresh greenery, and elephants, giraffes, buffalo, lions, and many other animals can be seen throughout the parks. To witness the Great Migration, head to the southern Serengeti and the Ndutu region near the Ngorongoro border. This is where vast herds of wildebeest, zebras, and gazelles gather for the calving season.',
+                badge: '<span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 25°C / occasional rain</span>',
+                temp: '25 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Calving season</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> High season</span>'
+            },
+            february: {
+                season: 'dry', seasonTag: 'Dry season', tagClass: 'tag-dry',
+                title: 'February', subtitle: 'Peak calving season',
+                description: 'February is the heart of the calving season in the southern Serengeti. Thousands of wildebeest, zebra, and gazelle give birth, attracting numerous predators. The weather is hot and generally dry with occasional short rains. Excellent wildlife viewing throughout the parks.',
+                badge: '<span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 26°C / mostly dry</span>',
+                temp: '26 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Calving peak</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> High season</span>'
+            },
+            march: {
+                season: 'shoulder', seasonTag: 'Shoulder season', tagClass: 'tag-shoulder',
+                title: 'March', subtitle: 'End of dry, start of long rains',
+                description: 'March is a transition month. Early March still offers good wildlife viewing, but by late March the long rains begin. The landscape becomes lush and green, and birding is excellent. Fewer tourists, which can mean lower rates.',
+                badge: '<span class="weather-badge" style="background:#fff3e0; padding:8px 22px; border-radius:60px;"><i class="fas fa-cloud-rain"></i> 26°C / increasing rain</span>',
+                temp: '26 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-feather"></i> Birding peak</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-dollar-sign"></i> Shoulder rates</span>'
+            },
+            april: {
+                season: 'rainy', seasonTag: 'Rainy season', tagClass: 'tag-rainy',
+                title: 'April', subtitle: 'Peak of the long rains',
+                description: 'April is the wettest month. Heavy afternoon showers are common. The parks are lush and spectacularly green, but wildlife can be harder to spot in the thick vegetation. Excellent for birdwatchers. Low season rates apply, and many camps close.',
+                badge: '<span class="weather-badge" style="background:#e1f0fa; padding:8px 22px; border-radius:60px;"><i class="fas fa-cloud-showers-heavy"></i> 24°C / heavy rain</span>',
+                temp: '24 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-feather"></i> Prime birding</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-tag"></i> Low season rates</span>'
+            },
+            may: {
+                season: 'rainy', seasonTag: 'Rainy season', tagClass: 'tag-rainy',
+                title: 'May', subtitle: 'End of long rains',
+                description: 'May sees the tail end of the long rains. Rainfall decreases toward the end of the month. The vegetation is still lush, and the parks are quiet. Great time for photographers and those seeking solitude. Low season pricing continues.',
+                badge: '<span class="weather-badge" style="background:#e1f0fa; padding:8px 22px; border-radius:60px;"><i class="fas fa-cloud-rain"></i> 23°C / decreasing rain</span>',
+                temp: '23 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-camera"></i> Green scenery</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-tag"></i> Low season</span>'
+            },
+            june: {
+                season: 'shoulder', seasonTag: 'Shoulder season', tagClass: 'tag-shoulder',
+                title: 'June', subtitle: 'Start of dry season',
+                description: 'June marks the beginning of the dry season. Wildlife starts to congregate around water sources. The wildebeest migration begins moving north into the western corridor. Excellent game viewing with pleasant weather.',
+                badge: '<span class="weather-badge" style="background:#fff3e0; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 22°C / dry & cool</span>',
+                temp: '22 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Migration begins</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> Shoulder season</span>'
+            },
+            july: {
+                season: 'dry', seasonTag: 'Dry season', tagClass: 'tag-dry',
+                title: 'July', subtitle: 'Peak dry season & migration',
+                description: 'July is classic safari season. The wildebeest migration is in the northern Serengeti, with dramatic river crossings. Weather is dry and pleasant. Excellent wildlife viewing everywhere. High season, so book well in advance.',
+                badge: '<span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 21°C / clear & dry</span>',
+                temp: '21 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-water"></i> River crossings</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> Peak season</span>'
+            },
+            august: {
+                season: 'dry', seasonTag: 'Dry season', tagClass: 'tag-dry',
+                title: 'August', subtitle: 'Excellent game viewing',
+                description: 'August continues the peak dry season. The migration remains in the northern Serengeti. Game viewing is superb throughout the country. Weather is cool and comfortable. This is one of the busiest months.',
+                badge: '<span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 22°C / dry</span>',
+                temp: '22 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Northern Serengeti</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> Peak season</span>'
+            },
+            september: {
+                season: 'dry', seasonTag: 'Dry season', tagClass: 'tag-dry',
+                title: 'September', subtitle: 'Prime wildlife viewing',
+                description: 'September remains dry and excellent for game viewing. The migration is still in the north, with river crossings continuing. Wildlife is concentrated around water sources. Weather is mild and pleasant.',
+                badge: '<span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 23°C / dry</span>',
+                temp: '23 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Mara River</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> High season</span>'
+            },
+            october: {
+                season: 'dry', seasonTag: 'Dry season', tagClass: 'tag-dry',
+                title: 'October', subtitle: 'End of dry season',
+                description: 'October is the last month of the dry season. Temperatures begin to rise. The migration starts moving south from the northern Serengeti. Game viewing remains outstanding. Still considered high season.',
+                badge: '<span class="weather-badge" style="background:#fef1e6; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 25°C / hot & dry</span>',
+                temp: '25 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Migration moves south</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> High season</span>'
+            },
+            november: {
+                season: 'rainy', seasonTag: 'Rainy season', tagClass: 'tag-rainy',
+                title: 'November', subtitle: 'Short rains',
+                description: 'November is the short rainy season. Afternoon showers are common but usually brief. The parks turn green again, and the migration arrives in the southern Serengeti for calving. Fewer tourists, and many camps offer lower rates.',
+                badge: '<span class="weather-badge" style="background:#e1f0fa; padding:8px 22px; border-radius:60px;"><i class="fas fa-cloud-rain"></i> 26°C / short rains</span>',
+                temp: '26 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-paw"></i> Migration arrives south</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-tag"></i> Shoulder rates</span>'
+            },
+            december: {
+                season: 'shoulder', seasonTag: 'Shoulder season', tagClass: 'tag-shoulder',
+                title: 'December', subtitle: 'Early dry / holiday season',
+                description: 'December is a transition month. Early in the month conditions are similar to November, but by late December the short rains end and dry weather returns. This is a popular holiday period, so book well in advance.',
+                badge: '<span class="weather-badge" style="background:#fff3e0; padding:8px 22px; border-radius:60px;"><i class="fas fa-sun"></i> 25°C / improving weather</span>',
+                temp: '25 °C', extra: '<span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-umbrella-beach"></i> Holiday season</span><span style="background:rgba(255,255,255,0.15); padding:8px 20px; border-radius:60px;"><i class="fas fa-star"></i> Peak rates</span>'
+            }
+        };
+
+        const monthBadges = document.querySelectorAll('.month-badge');
+        const detailSeasonTag = document.getElementById('detailSeasonTag');
+        const detailMonthTitle = document.getElementById('detailMonthTitle');
+        const detailSubtitle = document.getElementById('detailSubtitle');
+        const detailDescription = document.getElementById('detailDescription');
+        const detailBadges = document.getElementById('detailBadges');
+        const detailTemp = document.getElementById('detailTemp');
+        const detailExtra = document.getElementById('detailExtra');
+
+        function updateMonthDetail(monthKey) {
+            const data = monthData[monthKey];
+            if (!data) return;
+            
+            detailSeasonTag.className = 'season-tag ' + data.tagClass;
+            detailSeasonTag.textContent = data.seasonTag;
+            detailMonthTitle.textContent = data.title;
+            detailSubtitle.textContent = data.subtitle;
+            detailDescription.textContent = data.description;
+            detailBadges.innerHTML = data.badge;
+            detailTemp.textContent = data.temp;
+            detailExtra.innerHTML = data.extra;
+            
+            monthBadges.forEach(b => b.classList.remove('active-month'));
+            document.querySelector(`.month-badge[data-month="${monthKey}"]`).classList.add('active-month');
+        }
+
+        monthBadges.forEach(badge => {
+            badge.addEventListener('click', function() {
+                const month = this.dataset.month;
+                updateMonthDetail(month);
+            });
         });
-        
-        // Dynamic Date Calculation for Group Departures
-        function calculateGroupDates() {
-            const today = new Date();
-            const currentMonth = today.getMonth();
-            const currentYear = today.getFullYear();
-            
-            // Define base dates for each route (10th, 16th, 6th, 17th, 11th, 26th of each month)
-            const routeDates = {
-                'machame': 10,     // First Machame route (10th of month)
-                'lemosho': 16,     // First Lemosho route (16th of month)
-                'machame2': 6,     // Second Machame route (6th of month)
-                'machame6': 17,    // 6-day Machame route (17th of month)
-                'lemosho2': 11,    // Second Lemosho route (11th of month)
-                'marangu': 26      // Marangu route (26th of month)
-            };
-            
-            // Calculate dates for each route
-            Object.keys(routeDates).forEach(route => {
-                const dayOfMonth = routeDates[route];
-                
-                // Create trek start date
-                let trekMonth = currentMonth;
-                let trekYear = currentYear;
-                
-                // If the date has already passed this month, schedule for next month
-                if (today.getDate() > dayOfMonth) {
-                    trekMonth = currentMonth + 1;
-                    if (trekMonth > 11) {
-                        trekMonth = 0;
-                        trekYear = currentYear + 1;
-                    }
-                }
-                
-                const trekStartDate = new Date(trekYear, trekMonth, dayOfMonth);
-                const trekEndDate = new Date(trekStartDate);
-                
-                // Get duration from data attribute
-                const durationElements = document.querySelectorAll(`.trek-date[data-route="${route}"]`);
-                if (durationElements.length > 0) {
-                    const duration = parseInt(durationElements[0].getAttribute('data-duration'));
-                    
-                    // Calculate end date (duration - 1 days later)
-                    trekEndDate.setDate(trekStartDate.getDate() + (duration - 1));
-                    
-                    // Calculate arrival date (day before trek starts)
-                    const arrivalDate = new Date(trekStartDate);
-                    arrivalDate.setDate(arrivalDate.getDate() - 1);
-                    
-                    // Format dates
-                    const formatDate = (date) => {
-                        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-                    };
-                    
-                    const formatDateRange = (start, end) => {
-                        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                        
-                        if (start.getMonth() === end.getMonth()) {
-                            return `${monthNames[start.getMonth()]} ${start.getDate()} - ${end.getDate()}, ${start.getFullYear()}`;
-                        } else {
-                            return `${monthNames[start.getMonth()]} ${start.getDate()} - ${monthNames[end.getMonth()]} ${end.getDate()}, ${start.getFullYear()}`;
-                        }
-                    };
-                    
-                    // Update all elements for this route
-                    document.querySelectorAll(`.trek-date[data-route="${route}"]`).forEach(el => {
-                        el.textContent = formatDateRange(trekStartDate, trekEndDate);
-                    });
-                    
-                    document.querySelectorAll(`.arrival-date[data-route="${route}"]`).forEach(el => {
-                        el.textContent = formatDate(arrivalDate);
-                    });
-                    
-                    // Update WhatsApp links with correct dates
-                    document.querySelectorAll(`a[href*="${route}"]`).forEach(link => {
-                        const currentHref = link.getAttribute('href');
-                        if (currentHref.includes('wa.me')) {
-                            const newText = `Hello%20Vacation%20Awaits%20Adventure!%20I'm%20interested%20in%20joining%20the%20${duration}-Day%20${route.charAt(0).toUpperCase() + route.slice(1)}%20Route%20Kilimanjaro%20group%20departure%20starting%20${formatDate(trekStartDate)}.`;
-                            link.setAttribute('href', `https://wa.me/255753437120?text=${newText}`);
-                        }
-                    });
-                }
-            });
-            
-            // Calculate safari dates (monthly on 15th)
-            document.querySelectorAll('.safari-date').forEach(el => {
-                const duration = parseInt(el.getAttribute('data-duration'));
-                let safariMonth = currentMonth;
-                let safariYear = currentYear;
-                const safariDay = 15; // Safaris start on 15th of each month
-                
-                // If the date has already passed this month, schedule for next month
-                if (today.getDate() > safariDay) {
-                    safariMonth = currentMonth + 1;
-                    if (safariMonth > 11) {
-                        safariMonth = 0;
-                        safariYear = currentYear + 1;
-                    }
-                }
-                
-                const safariStartDate = new Date(safariYear, safariMonth, safariDay);
-                const safariEndDate = new Date(safariStartDate);
-                safariEndDate.setDate(safariStartDate.getDate() + (duration - 1));
-                
-                const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                
-                if (safariStartDate.getMonth() === safariEndDate.getMonth()) {
-                    el.textContent = `${monthNames[safariStartDate.getMonth()]} ${safariStartDate.getDate()} - ${safariEndDate.getDate()}, ${safariStartDate.getFullYear()}`;
-                } else {
-                    el.textContent = `${monthNames[safariStartDate.getMonth()]} ${safariStartDate.getDate()} - ${monthNames[safariEndDate.getMonth()]} ${safariEndDate.getDate()}, ${safariStartDate.getFullYear()}`;
-                }
-            });
-            
-            // Update copyright year
-            document.getElementById('currentYear').textContent = currentYear;
-            
-            // Update last updated date
-            const lastUpdated = new Date().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            document.getElementById('lastUpdated').textContent = lastUpdated;
-        }
-        
-        // Initialize date calculations when page loads
-        document.addEventListener('DOMContentLoaded', calculateGroupDates);
-        
-        // Update dates at midnight each day (in case month changes)
-        function updateDatesAtMidnight() {
-            const now = new Date();
-            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-            const timeUntilMidnight = tomorrow - now;
-            
-            setTimeout(() => {
-                calculateGroupDates();
-                // Schedule next update for the next midnight
-                updateDatesAtMidnight();
-            }, timeUntilMidnight);
-        }
-        
-        // Start the midnight update cycle
-        updateDatesAtMidnight();
-        
-        // Also update dates if user leaves page open for a long time
-        setInterval(calculateGroupDates, 3600000); // Check every hour
+
+        // Initialize with January
+        updateMonthDetail('january');
     </script>
 </body>
 </html>
